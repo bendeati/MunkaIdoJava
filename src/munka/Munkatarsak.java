@@ -63,6 +63,9 @@ public class Munkatarsak extends javax.swing.JFrame {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
         });
 
         jLabel1.setText("Munkaidő elszámolás");
@@ -119,6 +122,11 @@ public class Munkatarsak extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea1);
 
         jButton2.setText("Új munkatárs adatainak felvétele");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -269,6 +277,17 @@ public class Munkatarsak extends javax.swing.JFrame {
             System.out.println("Hiba" + e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // az új form megnyitása
+        Ujmunkatars uj = new Ujmunkatars();
+        uj.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        //ha visszakapja a vezérlést
+        tableFrissites();
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
